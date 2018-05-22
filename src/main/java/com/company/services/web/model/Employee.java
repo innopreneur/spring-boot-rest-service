@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -15,8 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -60,9 +57,10 @@ public class Employee {
 
 	public Employee() {}
 
-	public Employee(@NotNull String email, @NotNull String name, @NotNull @Past Date birthDate,
+	public Employee(Long id, @NotNull String email, @NotNull String name, @NotNull @Past Date birthDate,
 			Set<String> hobbies) {
 		super();
+		this.id = id;
 		this.email = email;
 		this.name = name;
 		this.birthDate = birthDate;
