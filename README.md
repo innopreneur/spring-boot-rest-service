@@ -77,7 +77,7 @@ docker compose file to orchestrate and run containers for *employee-rest-service
 #### **Wrapper.sh**
 shell script wait for *mysql server* to get started before starting *employee-rest-service.jar*
 
-### **DockerFile**
+#### **DockerFile**
 docker file to build image for *employee-rest-service.jar*
 
 #### **SwaggerConfiguration.java**
