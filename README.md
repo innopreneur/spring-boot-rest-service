@@ -1,5 +1,7 @@
 # Spring-boot-rest-service
 
+This a spring-boot based REST service,which can be later utilized as microservice to be consumed by other services.This service is about managing employees in a company and persisiting the details in MySQL database.
+
 ### Employee Resource API structure
 - **GET** - http://localhost:8080/api/employees
 - **GET** - http://localhost:8080/api/employees/{id}
@@ -93,7 +95,7 @@ This folder contains properties for this spring boot application. It also contai
 This package contains all tests. There are two types of tests :
 	- **Unit Tests** - Covered for *EmployeeService.java*
 	- **Integration Tests** - Covered for *EmployeeController.java*
-> ***Note*** - Due to time unavailability, I have not covered all tests extensively, but current coverage handles common use cases). Ideally, there can be lot other tests for negative scenarios and fields validations.
+> ***Note*** - Due to time constraints, I have not covered all tests extensively, but current coverage handles common use cases. Ideally, there can be lot other tests for negative scenarios and fields validations.
 
 ## Add-Ons
 Apart from the required functionalities, I have also tried to add few useful utilities as below :
@@ -132,6 +134,7 @@ Apart from the required functionalities, I have also tried to add few useful uti
 5. run **mvn clean package**
 6. from **{basedir}/target**, start **employee-rest-service.jar**, using command *java -jar employee-rest-service.jar*
 7. REST api is exposed and ready to be consumed using any clients like Postman (or even integrated swagger or hal browser)
+> ***Note*** - **employee-rest-service.jar** will be generated in **target/** folder even if **mvn clean package** steps fails due to some failure like docker installtion issue etc.
 ---
 ### with Docker
 ---
