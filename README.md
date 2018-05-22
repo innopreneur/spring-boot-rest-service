@@ -13,7 +13,7 @@
 +---src
 |   +---main
 |   |   +---docker
-|   |   |       docker-compose.yml
+|   |   |       DockerFile
 |   |   |       Wrapper.sh
 |   |   |       
 |   |   +---java
@@ -62,14 +62,23 @@
 |                                   EmployeeServiceTest.java
 |                                   
 \---target
+|
+|
+\---docker-compose.yml
+|
+|
+\---pom.xml
  ```
 
 ### Important files/folders in this project
 #### **docker-compose.yml** 
-docker compose file to orchestrate and run containers for *rest service jar* and *mysql server*
+docker compose file to orchestrate and run containers for *employee-rest-servicej.ar* and *mysql server*
 
 #### **Wrapper.sh**
-shell script wait for *mysql server* to get started before starting *rest service jar*
+shell script wait for *mysql server* to get started before starting *employee-rest-service.jar*
+
+### **DockerFile**
+docker file to build image for *employee-rest-service.jar*
 
 #### **SwaggerConfiguration.java**
 To enable support for Swagger docs and UI. For more details refer https://swagger.io/

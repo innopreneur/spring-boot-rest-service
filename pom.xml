@@ -107,7 +107,7 @@
 						<resource>
 							<targetPath>/</targetPath>
 							<directory>${docker.baseDir}</directory>
-							<include>wrapper.sh</include>
+							<include>Wrapper.sh</include>
 						</resource>
 					</resources>
 				</configuration>

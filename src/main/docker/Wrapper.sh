@@ -4,4 +4,4 @@ while ! exec 6<>/dev/tcp/${DATABASE_HOST}/${DATABASE_PORT}; do
     sleep 10
 done
 
-java -Dspring.profiles.active=container -jar /app.jar
+java -jar /app.jar
