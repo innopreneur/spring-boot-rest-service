@@ -1,3 +1,4 @@
+
 # Spring-boot-rest-service
 
 This a spring-boot based REST service,which can be later utilized as microservice to be consumed by other services.This service is about managing employees in a company and persisiting the details in MySQL database.
@@ -13,11 +14,7 @@ This a spring-boot based REST service,which can be later utilized as microservic
 ### Project Structure 
 ```
 +---src
-|   +---main
-|   |   +---docker
-|   |   |       DockerFile
-|   |   |       Wrapper.sh
-|   |   |       
+|   +---main      
 |   |   +---java
 |   |   |   \---com
 |   |   |       \---company
@@ -66,21 +63,11 @@ This a spring-boot based REST service,which can be later utilized as microservic
 \---target
 |
 |
-\---docker-compose.yml
-|
 |
 \---pom.xml
  ```
 
 ### Important files/folders in this project
-#### **docker-compose.yml** 
-docker compose file to orchestrate and run containers for *employee-rest-servicej.ar* and *mysql server*
-
-#### **Wrapper.sh**
-shell script wait for *mysql server* to get started before starting *employee-rest-service.jar*
-
-#### **DockerFile**
-docker file to build image for *employee-rest-service.jar*
 
 #### **SwaggerConfiguration.java**
 To enable support for Swagger docs and UI. For more details refer https://swagger.io/
@@ -118,15 +105,15 @@ Apart from the required functionalities, I have also tried to add few useful uti
 
 
 ## How to set up ?
-### without Docker
-------
+
 ***PreRequisites*** 
 - Java 8
 - Maven 3
-- MySQL Server
+- MySQL Server 8
 - Eclipse IDE (or similar)
 - Postman (or SoapUI) (Optional)
  -----
+1. clone this repo using **git clone <repo_url>**
 1. Install and start MySQL server.
 2. Set password for **root** user as **password**
 3. Create database named **company**.
@@ -134,22 +121,8 @@ Apart from the required functionalities, I have also tried to add few useful uti
 5. run **mvn clean package**
 6. from **{basedir}/target**, start **employee-rest-service.jar**, using command *java -jar employee-rest-service.jar*
 7. REST api is exposed and ready to be consumed using any clients like Postman (or even integrated swagger or hal browser)
-> ***Note*** - **employee-rest-service.jar** will be generated in **target/** folder even if **mvn clean package** steps fails due to some failure like docker installtion issue etc.
----
-### with Docker
----
-***PreRequisites*** 
-- Java 8
-- Maven 3
-- Docker 17.03 (or above)
-- Eclipse IDE (or similar)
-- Postman (or SoapUI) (Optional)
----
-1. Build the docker container for our *employee-rest-service, using command  ***mvn clean package docker:build***
-2. Once above command has run successfully, run ***docker-compose up***. This will run our *docker-compose.yml* file. 
-3.  Now verify if both containers (employee-rest-service.jar) and (mysql-server) are up and running using command - **docker container ls**
-4. If you see 2 containers then required REST api is exposed and ready to be consumed using any clients like Postman (or even integrated swagger or hal browser)
-> Tests can be executed by command - **mvn test**
+
+> Tests can be explicitly run by command - **mvn test**
 
 ### Assumptions
 * Employee Id is auto generated and incremented. Since, it was unclear to me what type of id is needed for employee (**java.util.UUID** or auto generated **java.lang.Long** id), I have used both as Employee attributes. But, employee has java.util.Long as primary key,but it also has java.util.UUID randomly generated.

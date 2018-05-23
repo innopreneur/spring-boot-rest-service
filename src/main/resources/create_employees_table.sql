@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `company.employees` (
+CREATE TABLE IF NOT EXISTS `company`.`employees` (
   `id` INT(16) NOT NULL AUTO_INCREMENT,
   `uuid` BINARY(16) NOT NULL,
   `email` VARCHAR(32) NOT NULL,
