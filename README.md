@@ -36,7 +36,10 @@ This a spring-boot based REST service,which can be later utilized as microservic
 |   |   |                   |       
 |   |   |                   +---repository
 |   |   |                   |       EmployeeRepository.java
-|   |   |                   |       
+|   |   |                   |  
+|   |   |                   +---security
+|   |   |                   |       WebSecurityConfig.java
+|   |   |                   |     
 |   |   |                   \---service
 |   |   |                           EmployeeService.java
 |   |   |                           
