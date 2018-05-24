@@ -68,5 +68,19 @@ public class EmployeeServiceTest {
 		Mockito.doThrow(new EmployeeNotFoundException()).when(employeeRepository).findById(anyLong());        
 		employeeService.getEmployeeById(anyLong());
 	 }
+	
+	@Test(expected = EmployeeNotFoundException.class)
+	public void test_update_employee_by_id_404_exception() {
+		EmployeeService employeeService = new EmployeeService(employeeRepository);
+		Mockito.doThrow(new EmployeeNotFoundException()).when(employeeRepository).findById(anyLong());
+		employeeService.updateEmployee(anyLong(), new Employee());
+	 }
+	
+	@Test(expected = EmployeeNotFoundException.class)
+	public void test_delete_employee_by_id_404_exception() {
+		EmployeeService employeeService = new EmployeeService(employeeRepository);
+		Mockito.doThrow(new EmployeeNotFoundException()).when(employeeRepository).findById(anyLong());
+		employeeService.deleteEmployee(anyLong());
+	 }
 }
 

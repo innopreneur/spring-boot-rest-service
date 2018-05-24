@@ -17,6 +17,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -41,6 +43,8 @@ public class Employee {
 	private String email;
 
 	@NotNull
+	@Size(min = 3, max = 32)
+	@Pattern(regexp = "^\\w+\\s\\w+$")
 	@Column(name = "name")
 	private String name;
 
@@ -50,7 +54,7 @@ public class Employee {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date birthDate;
 
-	@ElementCollection(fetch = FetchType.LAZY)
+	@ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "hobbies", joinColumns = @JoinColumn(name = "employee_id"))
 	@Column(name = "hobbies")
 	private Set<String> hobbies = new HashSet<>();

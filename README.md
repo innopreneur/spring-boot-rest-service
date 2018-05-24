@@ -55,11 +55,14 @@ This a spring-boot based REST service,which can be later utilized as microservic
 |                   \---services
 |                       \---web
 |                           +---controller
-|                           |       EmployeeControllerIntegrationTest.java
+|                           |       EmployeeControllerTest.java
 |                           |       
 |                           +---employeeservice
 |                           |       EmployeeServiceApplicationTests.java
-|                           |       
+|                           |
+|                           +---repository
+|                           |       EmployeeRepositoryIntegrationTests.java
+|                           |              
 |                           \---service
 |                                   EmployeeServiceTest.java
 |                                   

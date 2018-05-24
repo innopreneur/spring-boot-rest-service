@@ -1,9 +1,11 @@
-CREATE TABLE IF NOT EXISTS `company`.`employees` (
-  `id` INT(16) NOT NULL AUTO_INCREMENT,
-  `uuid` BINARY(16) NOT NULL,
-  `email` VARCHAR(32) NOT NULL,
-  `name` VARCHAR(32) NOT NULL,
-  `birthdate` DATE NOT NULL,
+CREATE TABLE `company`.`employees` (
+  `id` int(16) NOT NULL AUTO_INCREMENT,
+  `uuid` binary(16) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `birthdate` date NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE (`id`,`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+  UNIQUE KEY `id` (`id`,`email`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
