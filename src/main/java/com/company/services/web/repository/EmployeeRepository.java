@@ -11,6 +11,4 @@ import com.company.services.web.model.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
-	/*@Query(value = "SELECT * FROM employees e LEFT JOIN hobbies h ON (e.id = h.employee_id)", nativeQuery = true)
-	List<Employee> findAll();*/
 }
