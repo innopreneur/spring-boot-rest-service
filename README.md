@@ -86,9 +86,8 @@ This folder contains properties for this spring boot application. It also contai
 
 #### **src/test/java**
 This package contains all tests. There are two types of tests :
-	- **Unit Tests** - Covered for *EmployeeService.java*
-	- **Integration Tests** - Covered for *EmployeeController.java*
-> ***Note*** - Due to time constraints, I have not covered all tests extensively, but current coverage handles common use cases. Ideally, there can be lot other tests for negative scenarios and fields validations.
+	- **Unit Tests** - Covered for *EmployeeService.java*,*EmployeeController.java*
+	- **Integration Tests** - Covered for *EmployeeRepository.java* integrated with MySQL server
 
 ## Add-Ons
 Apart from the required functionalities, I have also tried to add few useful utilities as below :
